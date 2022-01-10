@@ -1,0 +1,17 @@
+{
+  "Dart Property": {
+		"prefix": "prop",
+		"description": [
+			"Create dart property. \n  \n ",
+			"Input:",
+			"select text \"test-variable\" and type prop and tab",
+			"Output:",
+			"${1} _testVariable = {2};",
+			"${1} get TestVariable => _testVariable;"
+		],
+		"body": [
+			"${1} _${TM_SELECTED_TEXT/(.*)/${1:/camelcase}/g} = ${2};",
+			"${1} get ${TM_SELECTED_TEXT/(.*)/${1:/pascalcase}/g} => _${TM_SELECTED_TEXT/(.*)/${1:/camelcase}/g};",
+		]
+	},
+}
